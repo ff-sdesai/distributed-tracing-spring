@@ -2,7 +2,7 @@
 
 ##Run the Example
 
-cd /home/sdesai/Uplight/code/open-telemetry/spring-cloud-sleuth-otel-slf4j
+cd distributed-tracing-spring/spring-cloud-sleuth-otel-slf4j
 mvn clean install
 sudo docker build -f DockerFile -t spring-cloud-sleuth-otel-slf4j .
 sudo docker compose up
