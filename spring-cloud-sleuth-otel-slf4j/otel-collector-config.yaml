@@ -1,0 +1,33 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+processors:
+  batch:
+
+exporters:
+  datadog:
+    api:
+      site: datadoghq.com
+      key: ${DD_API_KEY}
+  file:
+    path: /tmp/signals.json
+  logging:
+    loglevel: debug
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [datadog, logging, file]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [datadog, logging, file]
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [datadog,logging, file]

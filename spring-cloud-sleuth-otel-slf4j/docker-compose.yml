@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.69.0
+    command: [ "--config=/etc/otel-collector-config.yaml" ]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+      - /tmp:/tmp
+    ports:
+      - "4317:4317" # OTLP gRPC receiver
+      - "4318:4318" # OTLP http receiver
+    environment:
+      - DD_API_KEY=${DD_API_KEY}    
+    
+    
+  spring-cloud-sleuth-otel-slf4j:
+     image: spring-cloud-sleuth-otel-slf4j
+     ports:
+      - "8181:8181"
+     environment:
+      - server.port=${TOMCAT_PORT}
+      
+   

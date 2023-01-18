@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: spring-cloud-sleuth-otel-slf4j
+  sleuth:
+    otel:
+      config:
+        trace-id-ratio-based: 1.0
+      exporter:
+        otlp:
+          endpoint: http://otel-collector:4317
+    baggage:
+     remoteFields: requestId,serviceName,traceId
+     correlationFields: requestId,serviceName,traceId
+     tagFields: requestId,serviceName,traceId
+     localFields: 
