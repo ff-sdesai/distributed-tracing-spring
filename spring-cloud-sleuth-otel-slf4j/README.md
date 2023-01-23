@@ -2,10 +2,11 @@
 
 ##Run the Example
 
-cd distributed-tracing-spring/spring-cloud-sleuth-otel-slf4j
+cd /home/sdesai/Uplight/code/open-telemetry/spring-cloud-sleuth-otel-slf4j
 mvn clean install
 sudo docker build -f DockerFile -t spring-cloud-sleuth-otel-slf4j .
 sudo docker compose up
+Once application is up, hit http://localhost:8181/?testCount=1 from web browser to generate traces and logs
 
 
 ## view the signals
