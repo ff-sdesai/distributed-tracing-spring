@@ -81,11 +81,6 @@
 			<artifactId>spring-cloud-sleuth-otel-autoconfigure</artifactId>
 			<version>1.1.0</version>
 		</dependency>
-		<dependency>
-			<groupId>io.opentelemetry</groupId>
-			<artifactId>opentelemetry-exporter-otlp-trace</artifactId>
-			<version>1.14.0</version>
-		</dependency>
 
 		<dependency>
 			<groupId>io.opentelemetry.instrumentation</groupId>
@@ -109,6 +104,19 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-extension-trace-propagators -->
+		<dependency>
+		    <groupId>io.opentelemetry</groupId>
+		    <artifactId>opentelemetry-extension-trace-propagators</artifactId>
+		    <version>1.22.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-exporter-otlp-logs</artifactId>
+			<version>1.22.0-alpha</version>
+		</dependency>
+		
 
 	</dependencies>
 

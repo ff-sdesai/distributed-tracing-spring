@@ -9,7 +9,10 @@ spring:
         otlp:
           endpoint: http://otel-collector:4317
     baggage:
-     remoteFields: requestId,serviceName,traceId
-     correlationFields: requestId,serviceName,traceId
+     remoteFields: requestId,serviceName,traceId,traceparent
+     correlationFields: requestId,serviceName,traceId,traceparent
      tagFields: requestId,serviceName,traceId
-     localFields: 
+     localFields: serviceName
+    propagation:
+     type: W3C 
+    
