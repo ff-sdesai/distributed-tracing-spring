@@ -33,6 +33,7 @@ public class TestApplicationAspect {
         throws Throwable {
         System.out.println( "In TestApplicationAspect -> aroundAspect" );
         tracer.createBaggage( "serviceName", "spring-cloud-sleuth-otel-slf4j" );
+        tracer.createBaggage( "testProperty", "test-property1" );
         return joint.proceed();
     }
 
