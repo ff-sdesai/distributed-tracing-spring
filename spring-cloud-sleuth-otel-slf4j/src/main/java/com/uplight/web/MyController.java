@@ -28,7 +28,7 @@ public class MyController {
     // @NewSpan
     public String hello( @RequestParam("testCount") @SpanTag(key = "testCount123") int testCount ) {
         testPrivateMethod();
-        // testService.test();
+        testService.test();
         return "Hello ";
     }
 
