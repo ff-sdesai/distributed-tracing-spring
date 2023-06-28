@@ -15,5 +15,19 @@ public class ApplicationStarter {
         SpringApplication.run( ApplicationStarter.class, args );
     }
 
+
+    // @Bean
+    // @ConditionalOnMissingBean
+    // OtlpHttpSpanExporter otlpHttpSpanExporter() {
+    // OtlpHttpSpanExporterBuilder builder = OtlpHttpSpanExporter.builder().setEndpoint( "http://otel-collector:4317" );
+    //
+    // for( Entry<String, String> header : properties.getHeaders().entrySet() ) {
+    // builder.addHeader( header.getKey(), header.getValue() );
+    // }
+    //
+    // return builder.build();
+    //
+    // }
+
 }
 
